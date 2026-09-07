@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FIREBASE (compat verzija - radi bez ES modula) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Tvoji ostali meta tagovi -->
+    <meta name="keywords" content="svijeće, mirisne svijeće, ručni rad, poklon">
+    <meta name="author" content="Marina Nimac">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet"> <!--Font Stile sa Google fonts-->
+    <title>Konfigurator svijeća</title>
+</head>
+<body>
+    <!--HEADER-->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="pronadi_inspiraciju.html">Pronađi inspiraciju</a></li>
+                <li><a href="proizvodi.html">Proizvodi</a></li>
+                <li id="nav-auth"><a href="login.html">Prijava</a></li>
+            </ul>
+        </nav>
+
+    <div class="cart-wrapper">
+            <a href="#" class="cart" id="cart-toggle">
+                <img src="slike/kosarica1.jpg" alt="Košarica">
+                <span class="cart-count">0</span>
+            </a>
+            <div class="cart-dropdown" id="cart-dropdown">
+                <h4 class="cart-dropdown-naslov">Vaša košarica</h4>
+                <p class="cart-dropdown-prazna" id="cart-dropdown-prazna">Košarica je prazna.</p>
+                <div class="cart-dropdown-lista" id="cart-dropdown-lista"></div>
+                <div class="cart-dropdown-narudzba" id="cart-narudzba">
+                    <textarea id="cart-email" class="cart-email" placeholder="Unesite svoj e-mail" rows="1"></textarea>
+                    <button type="button" id="btn-naruci" class="btn-naruci">Naruči</button>
+                </div>
+            </div>
+        </div>
+
+        <section>
+        <article class="container1">
+                <h4>RUČNO IZRAĐENE SVIJEĆE</h4>
+                <h1>Kreirajte svoju savršenu svijeću</h1>
+                <h3>Personalizirane svijeće u obliku torte — odaberite boju i dodatke te stvorite jedinstveni poklon</h3>
+        </article>
+        </section>
+    </header>
+    
+    <!-- MAIN-->
+    <main>
+        <!-- PREVIEW TORTA BOJA-->
+        <section class="container2">
+            <section class="container2-grid">
+                <article class="card">
+                    <h3>Odaberite boju baze</h3>
+                    <img id="slika" src="slike/torta_bijela.jpg" width="300">
+                    <br><br>
+                    <!-- Gumbi torta -->
+                <article class="gumbi-torta">
+                    <button class="krug bijeli"></button>
+                    <button class="krug ljubicasti"></button>
+                    <button class="krug rozi"></button>
+                </article>
+                <button type="button">Odaberi</button>
+                </article>
+
+                <!-- DODATCI -->
+                <article class="card">
+                    <h3>Odaberite dodatke</h3>
+                    <img id="dodatci" src="slike/dodatak_macaroons2.png" width="300">
+                    <br><br>          
+                <!-- Gumbi dodatci -->
+                <article class="gumbi-dodatci">
+                    <div class="dodatak-dropdown">
+                        <button type="button" class="dodatak-glavni">Macaroons ▾</button>
+                        <div class="dodatak-opcije">
+                            <button type="button" data-naziv="Macaroons (Roza)" data-slika="slike/dodatak_macaroons1.png">Roza</button>
+                            <button type="button" data-naziv="Macaroons (Ljubičasta)" data-slika="slike/dodatak_macaroons2.png">Ljubičasta</button>
+                        </div>
+                    </div>
+
+                    <div class="dodatak-dropdown">
+                        <button type="button" class="dodatak-glavni">Srce ▾</button>
+                        <div class="dodatak-opcije">
+                            <button type="button" data-naziv="Srce (Roza)" data-slika="slike/dodatak_srca1.png">Roza</button>
+                            <button type="button" data-naziv="Srce (Ljubičasta)" data-slika="slike/dodatak_srca2.jpg">Ljubičasta</button>
+                        </div>
+                    </div>
+
+                    <div class="dodatak-dropdown">
+                        <button type="button" class="dodatak-glavni">Cvijeće ▾</button>
+                        <div class="dodatak-opcije">
+                            <button type="button" data-naziv="Cvijeće (Roza)" data-slika="slike/dodatak_cvijece.jpg">Roza</button>
+                            <button type="button" data-naziv="Cvijeće (Ljubičasta)" data-slika="slike/dodatak_cvijece2.png">Ljubičasta</button>
+                        </div>
+                    </div>
+
+                    <div class="dodatak-dropdown">
+                        <button type="button" class="dodatak-glavni">Natpis Happy Birthday ▾</button>
+                        <div class="dodatak-opcije">
+                            <button type="button" data-naziv="Natpis Happy Birthday (Roza)" data-slika="slike/dodatak_natpis1.jpg">Roza</button>
+                            <button type="button" data-naziv="Natpis Happy Birthday (Ljubičasta)" data-slika="slike/dodatak_natpis2.png">Ljubičasta</button>
+                        </div>
+                    </div>
+
+                    <div class="dodatak-dropdown">
+                        <button type="button" class="dodatak-glavni">Voće ▾</button>
+                        <div class="dodatak-opcije">
+                            <button type="button" data-naziv="Voće (Roza)" data-slika="slike/dodatak_voce1.jpg">Roza</button>
+                            <button type="button" data-naziv="Voće (Ljubičasta)" data-slika="slike/dodatak_voce2.jpg">Ljubičasta</button>
+                        </div>
+                    </div>
+                </article>
+                <button type="button">Odaberi</button>
+                </article>
+            </section>
+        </section>
+
+        <!-- Custom Text --> 
+        <section>
+        <article class="container3-grid">
+            <h3>Unesite svoj tekst</h3>
+            <p>Ovdje možete unijeti kratki tekst ili ime voljene osobe i tako tortu dodatno personalizirati.</p>
+            <form>
+                <textarea maxlength="10" id="customText" placeholder="Unesite svoj tekst"></textarea>
+                <button type="submit">Pošalji</button>
+            </form>
+        </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Potražite nas na društvenim mrežama</p>
+        <a href="https://www.instagram.com/glassofhappinesscandles?igsh=d2c0dTgyaGFseGd2">
+            <img src="slike/Instagram_icon.png" alt="Instagram logo" width="30"></a>
+        <a href="https://www.tiktok.com/@glassofhappinessc?_r=1&_t=ZN-96HNe2hvFmI">
+            <img src="slike/TikTok_icon.png" alt="TikTok logo" width="30"></a>
+    </footer>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

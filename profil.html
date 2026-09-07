@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <title>Moj profil</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header-kratki">
+        <nav>
+            <ul>
+                <li><a href="index.html">Početna stranica</a></li>
+                <li><a href="pronadi_inspiraciju.html">Pronađi inspiraciju</a></li>
+                <li><a href="proizvodi.html">Proizvodi</a></li>
+                <li id="nav-auth"><a href="login.html">Prijava</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <article class="container1">
+                <h1>Moj profil</h1>
+                <h3 id="profil-email"></h3>
+            </article>
+        </section>
+    </header>
+
+    <main>
+        <section class="profil-sekcija">
+            <div class="profil-grid">
+
+                <!-- PODACI O KORISNIKU -->
+                <article class="profil-kartica">
+                    <h3>Moji podaci</h3>
+                    <form id="form-profil" class="auth-forma" style="display:flex;">
+                        <label for="profil-ime">Ime</label>
+                        <input type="text" id="profil-ime" placeholder="Ime">
+
+                        <label for="profil-prezime">Prezime</label>
+                        <input type="text" id="profil-prezime" placeholder="Prezime">
+
+                        <label for="profil-telefon">Telefon</label>
+                        <input type="tel" id="profil-telefon" placeholder="npr. 091 234 5678">
+
+                        <label for="profil-email-input">E-mail</label>
+                        <input type="email" id="profil-email-input" placeholder="Vaš e-mail">
+
+                        <button type="submit">Spremi podatke</button>
+                    </form>
+                    <button type="button" id="btn-odjava-profil" class="btn-odjava-profil">Odjavi se</button>
+                </article>
+
+                <!-- POVIJEST NARUDŽBI -->
+                <article class="profil-kartica">
+                    <h3>Povijest / praćenje narudžbi</h3>
+                    <div id="povijest-narudzbi" class="povijest-narudzbi">
+                        <p>Učitavanje narudžbi...</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Potražite nas na društvenim mrežama</p>
+        <a href="https://www.instagram.com/glassofhappinesscandles?igsh=d2c0dTgyaGFseGd2">
+            <img src="slike/Instagram_icon.png" alt="Instagram logo" width="30"></a>
+        <a href="https://www.tiktok.com/@glassofhappinessc?_r=1&_t=ZN-96HNe2hvFmI">
+            <img src="slike/TikTok_icon.png" alt="TikTok logo" width="30"></a>
+    </footer>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

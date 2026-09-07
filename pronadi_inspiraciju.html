@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FIREBASE (compat verzija - radi bez ES modula) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <title>Pronađi inspiraciju</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Početna stranica</a></li>
+                <li><a href="proizvodi.html">Proizvodi</a></li>
+                <li id="nav-auth"><a href="login.html">Prijava</a></li>
+            </ul>
+        </nav>
+
+        <div class="cart-wrapper">
+            <a href="#" class="cart" id="cart-toggle">
+                <img src="slike/kosarica1.jpg" alt="Košarica">
+                <span class="cart-count">0</span>
+            </a>
+            <div class="cart-dropdown" id="cart-dropdown">
+                <h4 class="cart-dropdown-naslov">Vaša košarica</h4>
+                <p class="cart-dropdown-prazna" id="cart-dropdown-prazna">Košarica je prazna.</p>
+                <div class="cart-dropdown-lista" id="cart-dropdown-lista"></div>
+                <div class="cart-dropdown-narudzba" id="cart-narudzba">
+                    <textarea id="cart-email" class="cart-email" placeholder="Unesite svoj e-mail" rows="1"></textarea>
+                    <button type="button" id="btn-naruci" class="btn-naruci">Naruči</button>
+                </div>
+            </div>
+        </div>
+        
+        <section>
+            <article class="container1">
+                <h1>Ovdje možete potražiti ideje i inspirirati se našim prijašnjim proizvodima</h1>
+            </article>
+        </section>
+    </header>
+    
+    <main>
+        <section>
+            <article class="containerimg">
+            <img src="slike/rozo_voce_hbd.jpg" alt="Roza torta voće i hbd" width="400">
+            <img src="slike/smede_srca.jpg" alt="Smeđa torta srca" width="400">
+            <img src="slike/bijelo_voce.jpg" alt="Bijela torta voće" width="400">
+            <img src="slike/monika_torta.jpg" alt="Monika torta hbd" width="400">
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Potražite nas na društvenim mrežama</p>
+        <a href="https://www.instagram.com/glassofhappinesscandles?igsh=d2c0dTgyaGFseGd2"><img src="slike/Instagram_icon.png" alt="Instagram_logo" width="30"></a>
+        <a href="https://www.tiktok.com/@glassofhappinessc?_r=1&_t=ZN-96HNe2hvFmI"><img src="slike/tiktok_icon.png" alt="tikTok logo" width="30"></a>
+    </footer>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
