@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- FIREBASE (compat verzija - radi bez ES modula) -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    
+
     <!-- Tvoji ostali meta tagovi -->
     <meta name="keywords" content="svijeće, mirisne svijeće, ručni rad, poklon">
     <meta name="author" content="Marina Nimac">
@@ -143,8 +139,9 @@
         <a href="https://www.tiktok.com/@glassofhappinessc?_r=1&_t=ZN-96HNe2hvFmI">
             <img src="slike/tiktok_icon.png" alt="TikTok logo" width="30"></a>
     </footer>
-    <script src="js/firebase-config.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/auth.js"></script>
+        <!-- FIREBASE (compat verzija - radi bez ES modula) -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/auth.js"></script>
 </body>
 </html>
