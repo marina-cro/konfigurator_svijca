@@ -844,6 +844,7 @@ footer{
             flex-direction: row;
             gap: 8px;
             align-items: center;
+            margin-right: 55px;
         }
 
         .cart-wrapper {
