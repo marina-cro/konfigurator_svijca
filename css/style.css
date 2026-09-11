@@ -811,6 +811,10 @@ footer{
             padding-top: 120px;
         }
 
+        header:not(.header-kratki) .container1 {
+            padding-top: 110px;
+        }
+
         nav{
             left: 0;
             right: 0;
